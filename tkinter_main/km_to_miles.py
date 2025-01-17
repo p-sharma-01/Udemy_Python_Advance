@@ -1,0 +1,22 @@
+from tkinter import *
+window=Tk()
+window.title("KM to Miles Cnvertor")
+window.minsize(width=200,height=100)
+def km_to_miles():
+    km=km_input.get()
+    miles=round(float(km)/1.609)
+    result.config(text=f"{miles}")
+
+km_input=Entry(width=5)
+km_input.grid(column=2,row=1)
+km_label=Label(text="KM")
+km_label.grid(column=3,row=1)
+is_equal_to=Label(text="is equal to")
+is_equal_to.grid(column=1,row=2)
+result=Label(text="0")
+result.grid(column=2,row=2)
+miles_label=Label(text="Miles")
+miles_label.grid(column=3,row=2)
+calc_button=Button(text="Convert",command=km_to_miles)
+calc_button.grid(column=2,row=3)
+window.mainloop()
